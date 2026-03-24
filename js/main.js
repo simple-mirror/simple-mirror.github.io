@@ -17,6 +17,7 @@ const size_value = document.getElementById("size_value");
 const sha256_value = document.getElementById("sha256_value");
 const default_installer_name = installer_value.textContent;
 
+// Keep the latest download details together so the page can refresh them in one go
 const release_data = {
   loading: true,
   version: null,
@@ -27,6 +28,7 @@ const release_data = {
 
 let current_language = "en";
 
+// Turn different language names into one form the site understands
 function normalize_language(value) {
   if (!value) {
     return null;
@@ -46,11 +48,13 @@ function normalize_language(value) {
   return translation_map[short_language] ? short_language : null;
 }
 
+// Fall back to English if the current language does not have this text
 function string_for(key) {
   const language_strings = translation_map[current_language] || translation_map.en;
   return language_strings[key] ?? translation_map.en[key] ?? "";
 }
 
+// Try the web address first, then saved settings, then the browser's own language list
 function resolve_initial_language() {
   const url_language = normalize_language(new URL(window.location.href).searchParams.get("lang"));
   if (url_language) {
@@ -63,6 +67,7 @@ function resolve_initial_language() {
       return stored_language;
     }
   } catch (_error) {
+    // Ignore cases where the browser does not let this page use saved settings
   }
 
   const browser_languages = Array.isArray(navigator.languages) ? navigator.languages : [navigator.language];
@@ -85,6 +90,7 @@ function format_size(bytes) {
   return `${formatter.format(bytes / (1024 * 1024))} MB`;
 }
 
+// Put the latest release details on the page
 function render_release_data() {
   version_value.textContent = release_data.loading ? string_for("loading_label") : (release_data.version || "—");
   installer_value.textContent = release_data.installer_name || default_installer_name;
@@ -92,6 +98,7 @@ function render_release_data() {
   sha256_value.textContent = release_data.installer_sha256 || "—";
 }
 
+// Refresh all text on the page after the language changes
 function apply_language() {
   document.documentElement.lang = current_language;
 
@@ -106,6 +113,7 @@ function apply_language() {
   render_release_data();
 }
 
+// Save the chosen language and keep the web address in step with it
 function set_language(language, options = {}) {
   current_language = language;
   language_select.value = language;
@@ -115,6 +123,7 @@ function set_language(language, options = {}) {
     try {
       window.localStorage.setItem(STORAGE_KEY, language);
     } catch (_error) {
+      // Ignore cases where the browser does not let this page save settings
     }
   }
 
@@ -129,6 +138,7 @@ function set_language(language, options = {}) {
   }
 }
 
+// Ask GitHub for the latest installer details and use whichever reply arrives successfully
 async function load_release_information() {
   const [manifest_result, release_result] = await Promise.allSettled([
     fetch(LATEST_MANIFEST_URL, { cache: "no-store" }).then((response) => {
@@ -184,11 +194,13 @@ async function load_release_information() {
 
 set_language(resolve_initial_language(), { skip_storage: true });
 
+// Let the user switch languages from the drop-down menu
 language_select.addEventListener("change", (event) => {
   set_language(normalize_language(event.target.value) || "en");
 });
 
 load_release_information().catch(() => {
+  // Show the fallback download link if the release details cannot be loaded
   release_data.loading = false;
   download_button.href = RELEASES_URL;
   manifest_link.hidden = false;
