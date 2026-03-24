@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Mirror</title>
+  <meta name="description" content="A lightweight landing page for Simple Mirror with live release info from GitHub.">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="page">
+    <header class="top_bar">
+      <a class="brand" href="#">
+        <img id="logo_image" src="logo.png" alt="Simple Mirror logo">
+        <div>
+          <p class="brand_name">Simple Mirror</p>
+          <p class="brand_note" data-i18n="brand_note">Desktop mirroring, kept simple.</p>
+        </div>
+      </a>
+
+      <label class="language_picker" for="language_select">
+        <span data-i18n="language_label">Language</span>
+        <select id="language_select" aria-label="Language"></select>
+      </label>
+    </header>
+
+    <main class="hero">
+      <section class="intro">
+        <p class="eyebrow" data-i18n="eyebrow">Simple backup utility</p>
+        <h1 data-i18n="title">Mirror folders with less friction.</h1>
+        <p class="description" data-i18n="description">
+          Description placeholder: add a short overview of how Simple Mirror simplifies rsync-based mirroring here.
+        </p>
+
+        <div class="actions">
+          <a
+            id="download_button"
+            class="button button_primary"
+            href="https://github.com/moltenib/simple-mirror/releases/latest/download/simple-mirror-setup.exe"
+            target="_blank"
+            rel="noreferrer"
+            data-i18n="download_label"
+          >Download</a>
+          <a
+            class="button button_secondary"
+            href="https://www.gnu.org/licenses/gpl-3.0.html"
+            target="_blank"
+            rel="noreferrer"
+            data-i18n="license_label"
+          >GNU GPL 3.0</a>
+        </div>
+      </section>
+
+      <aside class="release_card" aria-live="polite">
+        <div>
+          <p class="release_kicker" data-i18n="version_label">Latest version</p>
+          <p class="release_version" id="version_value">Loading latest release...</p>
+        </div>
+
+        <dl class="release_facts">
+          <div>
+            <dt data-i18n="installer_label">Installer</dt>
+            <dd id="installer_value">simple-mirror-setup.exe</dd>
+          </div>
+          <div>
+            <dt data-i18n="size_label">Size</dt>
+            <dd id="size_value">-</dd>
+          </div>
+        </dl>
+
+        <p class="release_status" id="release_status_text">Loading latest release...</p>
+        <a
+          id="manifest_link"
+          class="manifest_link"
+          href="https://github.com/moltenib/simple-mirror/releases/latest/download/manifest.json"
+          target="_blank"
+          rel="noreferrer"
+          data-i18n="manifest_label"
+        >Open manifest.json</a>
+        <p class="release_note" data-i18n="source_hint">Release information updates automatically from GitHub.</p>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <p data-i18n="footer_copy">Simple Mirror is free software released under the GNU GPL 3.0.</p>
+    </footer>
+  </div>
+</body>
+</html>
