@@ -147,7 +147,7 @@ h1 {
   margin: 0 0 0.9rem;
   max-width: 10.5ch;
   font-family: "Avenir Next Condensed", "Trebuchet MS", sans-serif;
-  font-size: clamp(2.8rem, 5vw, 5rem);
+  font-size: clamp(2.8rem, 5vw, 3rem);
   line-height: 0.96;
   letter-spacing: 0.01em;
 }
