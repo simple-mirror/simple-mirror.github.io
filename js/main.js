@@ -2,12 +2,37 @@ const RELEASES_URL = "https://github.com/moltenib/simple-mirror/releases/latest"
 const LATEST_MANIFEST_URL = "https://github.com/moltenib/simple-mirror/releases/latest/download/manifest.json";
 const LATEST_RELEASE_API = "https://api.github.com/repos/moltenib/simple-mirror/releases/latest";
 const STORAGE_KEY = "simple_mirror_site_language";
+const OGP_LOCALE_MAP = {
+  en: "en_US",
+  de: "de_DE",
+  es: "es_ES",
+  fr: "fr_FR",
+  it: "it_IT",
+  ja: "ja_JP",
+  nl: "nl_NL",
+  pt: "pt_PT",
+  "zh-CN": "zh_CN"
+};
 const translation_map = window.simple_mirror_translations;
 
 if (!translation_map || !translation_map.en) {
   throw new Error("translations.js did not load");
 }
 
+const brand_logo = document.querySelector(".brand img");
+const canonical_link = document.getElementById("canonical_link");
+const meta_description = document.getElementById("meta_description");
+const og_site_name_meta = document.getElementById("og_site_name_meta");
+const og_locale_meta = document.getElementById("og_locale_meta");
+const og_title_meta = document.getElementById("og_title_meta");
+const og_description_meta = document.getElementById("og_description_meta");
+const og_url_meta = document.getElementById("og_url_meta");
+const og_image_meta = document.getElementById("og_image_meta");
+const og_image_alt_meta = document.getElementById("og_image_alt_meta");
+const twitter_title_meta = document.getElementById("twitter_title_meta");
+const twitter_description_meta = document.getElementById("twitter_description_meta");
+const twitter_image_meta = document.getElementById("twitter_image_meta");
+const twitter_image_alt_meta = document.getElementById("twitter_image_alt_meta");
 const language_select = document.getElementById("language_select");
 const download_button = document.getElementById("download_button");
 const manifest_link = document.getElementById("manifest_link");
@@ -91,9 +116,41 @@ function render_release_data() {
   sha256_value.textContent = release_data.installer_sha256 || "—";
 }
 
+function localized_page_url(language) {
+  const url = new URL(window.location.origin + window.location.pathname);
+  if (language !== "en") {
+    url.searchParams.set("lang", language);
+  }
+  return url.toString();
+}
+
+function apply_metadata() {
+  const page_title = string_for("app_name");
+  const page_description = string_for("meta_description");
+  const page_url = localized_page_url(current_language);
+  const image_url = new URL("logo.png", window.location.href).toString();
+  const image_alt = string_for("logo_alt");
+
+  document.title = page_title;
+  brand_logo.alt = image_alt;
+  canonical_link.href = page_url;
+  meta_description.content = page_description;
+  og_site_name_meta.content = page_title;
+  og_locale_meta.content = OGP_LOCALE_MAP[current_language] || OGP_LOCALE_MAP.en;
+  og_title_meta.content = page_title;
+  og_description_meta.content = page_description;
+  og_url_meta.content = page_url;
+  og_image_meta.content = image_url;
+  og_image_alt_meta.content = image_alt;
+  twitter_title_meta.content = page_title;
+  twitter_description_meta.content = page_description;
+  twitter_image_meta.content = image_url;
+  twitter_image_alt_meta.content = image_alt;
+}
+
 function apply_language() {
   document.documentElement.lang = current_language;
-  document.title = string_for("app_name");
+  apply_metadata();
 
   document.querySelectorAll("[data-i18n]").forEach((node) => {
     node.textContent = string_for(node.dataset.i18n);
@@ -109,7 +166,6 @@ function apply_language() {
 function set_language(language, options = {}) {
   current_language = language;
   language_select.value = language;
-  apply_language();
 
   if (!options.skip_storage) {
     try {
@@ -127,6 +183,8 @@ function set_language(language, options = {}) {
     }
     window.history.replaceState({}, "", url);
   }
+
+  apply_language();
 }
 
 async function load_release_information() {

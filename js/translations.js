@@ -17,8 +17,10 @@ const translation_app_names = {
 window.simple_mirror_translations = {
   en: {
     app_name: translation_app_names.en,
+    logo_alt: "Simple Mirror logo",
     language_label: "Language:",
     title: "Welcome!",
+    meta_description: `${translation_app_names.en} is a reliable rsync wrapper to create and update back-up copies in one click.`,
     description_html: `<p><em>${translation_app_names.en}</em> is a reliable <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a> wrapper to create and update back-up copies in one click.</p><ul><li>Choose an origin folder;</li><li>Connect a back-up medium as the destination;</li><li>Synchronize to turn the destination into a mirror of the origin.</li></ul>`,
     video_note_html: `Find out more about how <em>rsync</em> works <a href="${translations_video_url}" target="_blank" rel="noreferrer">in this video</a>.`,
     download_label: "Download for Windows",
@@ -33,8 +35,10 @@ window.simple_mirror_translations = {
   },
   de: {
     app_name: translation_app_names.de,
+    logo_alt: "Logo von Einfacher Spiegel",
     language_label: "Sprache:",
     title: "Willkommen!",
+    meta_description: `${translation_app_names.de} ist ein zuverlässiger rsync-Wrapper, um Back-up-Kopien mit einem Klick zu erstellen und zu aktualisieren.`,
     description_html: `<p><em>${translation_app_names.de}</em> ist ein zuverlässiger <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a>-Wrapper, um Back-up-Kopien mit einem Klick zu erstellen und zu aktualisieren.</p><ul><li>Wählen Sie einen Ursprungsordner;</li><li>Verbinden Sie ein Back-up-Medium als Ziel;</li><li>Synchronisieren Sie, um das Ziel in ein Spiegelbild des Ursprungs zu verwandeln.</li></ul>`,
     video_note_html: `Erfahren Sie mehr darüber, wie <em>rsync</em> <a href="${translations_video_url}" target="_blank" rel="noreferrer">in diesem Video</a> funktioniert.`,
     download_label: "Für Windows herunterladen",
@@ -49,8 +53,10 @@ window.simple_mirror_translations = {
   },
   es: {
     app_name: translation_app_names.es,
+    logo_alt: "Logotipo de Espejo simple",
     language_label: "Idioma:",
     title: "¡Bienvenido!",
+    meta_description: `${translation_app_names.es} es un contenedor fiable de rsync para crear y actualizar copias de seguridad con un solo clic.`,
     description_html: `<p><em>${translation_app_names.es}</em> es un contenedor fiable de <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a> para crear y actualizar copias de seguridad con un solo clic.</p><ul><li>Elija una carpeta de origen;</li><li>Conecte un medio de copia de seguridad como destino;</li><li>Sincronice para convertir el destino en un espejo del origen.</li></ul>`,
     video_note_html: `Descubra más sobre cómo funciona <em>rsync</em> <a href="${translations_video_url}" target="_blank" rel="noreferrer">en este vídeo</a>.`,
     download_label: "Descargar para Windows",
@@ -65,8 +71,10 @@ window.simple_mirror_translations = {
   },
   fr: {
     app_name: translation_app_names.fr,
+    logo_alt: "Logo de Miroir simple",
     language_label: "Langue :",
     title: "Bienvenue !",
+    meta_description: `${translation_app_names.fr} est un conteneur rsync fiable pour créer et mettre à jour des copies de sauvegarde en un clic.`,
     description_html: `<p><em>${translation_app_names.fr}</em> est un conteneur <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a> fiable pour créer et mettre à jour des copies de sauvegarde en un clic.</p><ul><li>Choisissez un dossier source;</li><li>Branchez un support de sauvegarde comme destination;</li><li>Synchronisez pour transformer la destination en miroir de la source.</li></ul>`,
     video_note_html: `Découvrez plus en détail le fonctionnement de <em>rsync</em> <a href="${translations_video_url}" target="_blank" rel="noreferrer">dans cette vidéo</a>.`,
     download_label: "Télécharger pour Windows",
@@ -81,8 +89,10 @@ window.simple_mirror_translations = {
   },
   it: {
     app_name: translation_app_names.it,
+    logo_alt: "Logo di Specchio semplice",
     language_label: "Lingua:",
     title: "Benvenuto!",
+    meta_description: `${translation_app_names.it} è un wrapper affidabile di rsync per creare e aggiornare copie di backup con un solo clic.`,
     description_html: `<p><em>${translation_app_names.it}</em> è un wrapper affidabile di <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a> per creare e aggiornare copie di backup con un solo clic.</p><ul><li>Scegli una cartella di origine;</li><li>Collega un supporto di backup come destinazione;</li><li>Sincronizza per trasformare la destinazione in uno specchio dell'origine.</li></ul>`,
     video_note_html: `Scopra di più su come funziona <em>rsync</em> <a href="${translations_video_url}" target="_blank" rel="noreferrer">in questo video</a>.`,
     download_label: "Scarica per Windows",
@@ -97,8 +107,10 @@ window.simple_mirror_translations = {
   },
   ja: {
     app_name: translation_app_names.ja,
+    logo_alt: "シンプルミラーのロゴ",
     language_label: "言語:",
     title: "ようこそ!",
+    meta_description: `${translation_app_names.ja} は信頼できる rsync のラッパーで、ワンクリックでバックアップのコピーを作成および更新できます。`,
     description_html: `<p><em>${translation_app_names.ja}</em> は信頼できる <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a> のラッパーで、ワンクリックでバックアップのコピーを作成および更新できます。</p><ul><li>元になるフォルダーを選びます;</li><li>バックアップ用メディアを保存先として接続します;</li><li>同期して保存先を元のフォルダーのミラーにします.</li></ul>`,
     video_note_html: `<em>rsync</em> の仕組みについては、<a href="${translations_video_url}" target="_blank" rel="noreferrer">この動画で</a>詳しく確認できます。`,
     download_label: "Windows 向けダウンロード",
@@ -113,8 +125,10 @@ window.simple_mirror_translations = {
   },
   nl: {
     app_name: translation_app_names.nl,
+    logo_alt: "Logo van Eenvoudige spiegel",
     language_label: "Taal:",
     title: "Welkom!",
+    meta_description: `${translation_app_names.nl} is een betrouwbare rsync-wrapper om met één klik back-upkopieën te maken en bij te werken.`,
     description_html: `<p><em>${translation_app_names.nl}</em> is een betrouwbare <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a>-wrapper om met één klik back-upkopieën te maken en bij te werken.</p><ul><li>Kies een bronmap;</li><li>Sluit een back-upmedium aan als bestemming;</li><li>Synchroniseer om de bestemming in een spiegel van de bron te veranderen.</li></ul>`,
     video_note_html: `Bekijk meer uitleg over hoe <em>rsync</em> werkt <a href="${translations_video_url}" target="_blank" rel="noreferrer">in deze video</a>.`,
     download_label: "Downloaden voor Windows",
@@ -129,8 +143,10 @@ window.simple_mirror_translations = {
   },
   pt: {
     app_name: translation_app_names.pt,
+    logo_alt: "Logótipo do Espelho simples",
     language_label: "Idioma:",
     title: "Bem-vindo!",
+    meta_description: `${translation_app_names.pt} é um wrapper fiável de rsync para criar e atualizar cópias de segurança com um clique.`,
     description_html: `<p><em>${translation_app_names.pt}</em> é um wrapper fiável de <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a> para criar e atualizar cópias de segurança com um clique.</p><ul><li>Escolha uma pasta de origem;</li><li>Ligue um suporte de cópia de segurança como destino;</li><li>Sincronize para transformar o destino num espelho da origem.</li></ul>`,
     video_note_html: `Saiba mais sobre como o <em>rsync</em> funciona <a href="${translations_video_url}" target="_blank" rel="noreferrer">neste vídeo</a>.`,
     download_label: "Transferir para Windows",
@@ -145,8 +161,10 @@ window.simple_mirror_translations = {
   },
   "zh-CN": {
     app_name: translation_app_names["zh-CN"],
+    logo_alt: "简易镜像标志",
     language_label: "语言：",
     title: "欢迎！",
+    meta_description: `${translation_app_names["zh-CN"]} 是一个可靠的 rsync 包装工具，可一键创建和更新备份副本。`,
     description_html: `<p><em>${translation_app_names["zh-CN"]}</em> 是一个可靠的 <a href="${translations_rsync_url}" target="_blank" rel="noreferrer">rsync</a> 包装工具，可一键创建和更新备份副本。</p><ul><li>选择一个源文件夹;</li><li>将备份介质连接为目标位置;</li><li>执行同步，把目标变成源文件夹的镜像.</li></ul>`,
     video_note_html: `想进一步了解 <em>rsync</em> 的工作方式，请观看<a href="${translations_video_url}" target="_blank" rel="noreferrer">这个视频</a>。`,
     download_label: "下载 Windows 版",
