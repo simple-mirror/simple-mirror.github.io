@@ -32,7 +32,7 @@ window.simple_mirror_translations = {
     loading_label: "Loading latest release...",
     manifest_label: "Open manifest.json",
     source_hint_html: `This release is available on <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a>.`,
-    footer_html: `${translation_app_names.en} is free software released under the <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
+    footer_html: `<em>${translation_app_names.en}</em> is free software released under the <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
   },
   de: {
     app_name: translation_app_names.de,
@@ -51,7 +51,7 @@ window.simple_mirror_translations = {
     loading_label: "Neueste Version wird geladen...",
     manifest_label: "manifest.json öffnen",
     source_hint_html: `Dieses Release ist auf <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a> verfügbar.`,
-    footer_html: `${translation_app_names.de} ist freie Software unter der <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
+    footer_html: `<em>${translation_app_names.de}</em> ist freie Software unter der <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
   },
   es: {
     app_name: translation_app_names.es,
@@ -70,7 +70,7 @@ window.simple_mirror_translations = {
     loading_label: "Cargando la última versión...",
     manifest_label: "Abrir manifest.json",
     source_hint_html: `Esta versión está disponible en <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a>.`,
-    footer_html: `${translation_app_names.es} es software libre publicado bajo la <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
+    footer_html: `<em>${translation_app_names.es}</em> es software libre publicado bajo la <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
   },
   fr: {
     app_name: translation_app_names.fr,
@@ -89,7 +89,7 @@ window.simple_mirror_translations = {
     loading_label: "Chargement de la dernière version...",
     manifest_label: "Ouvrir manifest.json",
     source_hint_html: `Cette version est disponible sur <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a>.`,
-    footer_html: `${translation_app_names.fr} est un logiciel libre distribué sous <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
+    footer_html: `<em>${translation_app_names.fr}</em> est un logiciel libre distribué sous <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
   },
   it: {
     app_name: translation_app_names.it,
@@ -108,7 +108,7 @@ window.simple_mirror_translations = {
     loading_label: "Caricamento dell'ultima versione...",
     manifest_label: "Apri manifest.json",
     source_hint_html: `Questa release è disponibile su <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a>.`,
-    footer_html: `${translation_app_names.it} è software libero distribuito con <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
+    footer_html: `<em>${translation_app_names.it}</em> è software libero distribuito con <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
   },
   ja: {
     app_name: translation_app_names.ja,
@@ -127,7 +127,7 @@ window.simple_mirror_translations = {
     loading_label: "最新リリースを読み込み中...",
     manifest_label: "manifest.json を開く",
     source_hint_html: `このリリースは <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a> で入手できます。`,
-    footer_html: `${translation_app_names.ja} は <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a> で公開されている自由ソフトウェアです。`
+    footer_html: `<em>${translation_app_names.ja}</em> は <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a> で公開されている自由ソフトウェアです。`
   },
   nl: {
     app_name: translation_app_names.nl,
@@ -146,7 +146,7 @@ window.simple_mirror_translations = {
     loading_label: "Nieuwste release wordt geladen...",
     manifest_label: "manifest.json openen",
     source_hint_html: `Deze release is beschikbaar op <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a>.`,
-    footer_html: `${translation_app_names.nl} is vrije software onder de <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
+    footer_html: `<em>${translation_app_names.nl}</em> is vrije software onder de <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
   },
   pt: {
     app_name: translation_app_names.pt,
@@ -165,7 +165,7 @@ window.simple_mirror_translations = {
     loading_label: "A carregar a versão mais recente...",
     manifest_label: "Abrir manifest.json",
     source_hint_html: `Esta release está disponível no <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a>.`,
-    footer_html: `${translation_app_names.pt} é software livre disponibilizado sob a <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
+    footer_html: `<em>${translation_app_names.pt}</em> é software livre disponibilizado sob a <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.`
   },
   "zh-CN": {
     app_name: translation_app_names["zh-CN"],
@@ -184,6 +184,6 @@ window.simple_mirror_translations = {
     loading_label: "正在加载最新版本...",
     manifest_label: "打开 manifest.json",
     source_hint_html: `此版本可在 <a href="${translations_release_url}" target="_blank" rel="noreferrer">GitHub</a> 上获取。`,
-    footer_html: `${translation_app_names["zh-CN"]} 是在 <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a> 下发布的自由软件。`
+    footer_html: `<em>${translation_app_names["zh-CN"]}</em> 是在 <a href="${translations_gpl_url}" target="_blank" rel="noreferrer">GNU GPL 3.0</a> 下发布的自由软件。`
   }
 };
