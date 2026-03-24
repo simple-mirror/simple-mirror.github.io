@@ -4,53 +4,44 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Simple Mirror</title>
-  <meta name="description" content="A lightweight landing page for Simple Mirror with live release info from GitHub.">
+  <meta name="description" content="Simple Mirror is a lightweight landing page with live release information from GitHub.">
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="style.css">
-  <script src="main.js" defer></script>
+  <script src="js/translations.js" defer></script>
+  <script src="js/main.js" defer></script>
 </head>
 <body>
   <div class="page">
     <header class="top_bar">
       <a class="brand" href="#">
-        <img id="logo_image" src="logo.png" alt="Simple Mirror logo">
+        <img src="logo.png" alt="Simple Mirror logo">
         <div>
           <p class="brand_name">Simple Mirror</p>
-          <p class="brand_note" data-i18n="brand_note">Desktop mirroring, kept simple.</p>
         </div>
       </a>
 
       <label class="language_picker" for="language_select">
         <span data-i18n="language_label">Language</span>
-        <select id="language_select" aria-label="Language"></select>
+        <select id="language_select" aria-label="Language">
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <option value="fr">Français</option>
+          <option value="it">Italiano</option>
+          <option value="ja">日本語</option>
+          <option value="nl">Nederlands</option>
+          <option value="pt">Português</option>
+          <option value="zh-CN">简体中文</option>
+        </select>
       </label>
     </header>
 
     <main class="hero">
       <section class="intro">
-        <p class="eyebrow" data-i18n="eyebrow">Simple backup utility</p>
-        <h1 data-i18n="title">Mirror folders with less friction.</h1>
-        <p class="description" data-i18n="description">
-          Description placeholder: add a short overview of how Simple Mirror simplifies rsync-based mirroring here.
+        <h1 data-i18n="title">Welcome!</h1>
+        <p class="description" data-i18n-html="description_html">
+          Simple Mirror is an <a href="https://rsync.samba.org/" target="_blank" rel="noreferrer">rsync</a> wrapper for quick one-way back-ups. Choose an origin folder, connect a back-up medium as the destination, then synchronize to turn the destination into a mirror of the origin.
         </p>
-
-        <div class="actions">
-          <a
-            id="download_button"
-            class="button button_primary"
-            href="https://github.com/moltenib/simple-mirror/releases/latest/download/simple-mirror-setup.exe"
-            target="_blank"
-            rel="noreferrer"
-            data-i18n="download_label"
-          >Download</a>
-          <a
-            class="button button_secondary"
-            href="https://www.gnu.org/licenses/gpl-3.0.html"
-            target="_blank"
-            rel="noreferrer"
-            data-i18n="license_label"
-          >GNU GPL 3.0</a>
-        </div>
       </section>
 
       <aside class="release_card" aria-live="polite">
@@ -68,9 +59,23 @@
             <dt data-i18n="size_label">Size</dt>
             <dd id="size_value">-</dd>
           </div>
+          <div>
+            <dt data-i18n="sha256_label">SHA256</dt>
+            <dd id="sha256_value" class="release_code">-</dd>
+          </div>
         </dl>
 
-        <p class="release_status" id="release_status_text">Loading latest release...</p>
+        <p class="release_note" data-i18n-html="source_hint_html">This release is available on <a href="https://github.com/moltenib/simple-mirror/releases/latest" target="_blank" rel="noreferrer">GitHub</a>.</p>
+
+        <a
+          id="download_button"
+          class="button button_primary"
+          href="https://github.com/moltenib/simple-mirror/releases/latest/download/simple-mirror-setup.exe"
+          target="_blank"
+          rel="noreferrer"
+          data-i18n="download_label"
+        >Download</a>
+
         <a
           id="manifest_link"
           class="manifest_link"
@@ -78,13 +83,13 @@
           target="_blank"
           rel="noreferrer"
           data-i18n="manifest_label"
+          hidden
         >Open manifest.json</a>
-        <p class="release_note" data-i18n="source_hint">Release information updates automatically from GitHub.</p>
       </aside>
     </main>
 
     <footer class="footer">
-      <p data-i18n="footer_copy">Simple Mirror is free software released under the GNU GPL 3.0.</p>
+      <p data-i18n-html="footer_html">Simple Mirror is free software released under the <a href="https://www.gnu.org/licenses/gpl-3.0.html" target="_blank" rel="noreferrer">GNU GPL 3.0</a>.</p>
     </footer>
   </div>
 </body>

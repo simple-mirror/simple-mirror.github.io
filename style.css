@@ -9,7 +9,6 @@
   --blue: #59abf1;
   --blue_strong: #469cec;
   --gold: #d0982b;
-  --gold_soft: rgba(208, 152, 43, 0.18);
   --shadow: rgba(0, 0, 0, 0.34);
 }
 
@@ -85,12 +84,6 @@ body::before {
   letter-spacing: 0.02em;
 }
 
-.brand_note {
-  margin: 0.18rem 0 0;
-  color: var(--muted);
-  font-size: 0.96rem;
-}
-
 .language_picker {
   display: flex;
   align-items: center;
@@ -150,41 +143,41 @@ body::before {
   pointer-events: none;
 }
 
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.45rem 0.82rem;
-  border-radius: 999px;
-  background: var(--gold_soft);
-  color: #ffe1a6;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-}
-
 h1 {
-  margin: 1rem 0 0.9rem;
+  margin: 0 0 0.9rem;
   max-width: 10.5ch;
   font-family: "Avenir Next Condensed", "Trebuchet MS", sans-serif;
-  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-size: clamp(2.8rem, 5vw, 5rem);
   line-height: 0.96;
   letter-spacing: 0.01em;
 }
 
 .description {
-  max-width: 60ch;
+  max-width: 66ch;
   margin: 0;
   color: var(--muted);
   font-size: 1.08rem;
   line-height: 1.72;
 }
 
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
+.description a,
+.release_note a,
+.footer a,
+.manifest_link {
+  color: #ffe1a6;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.description a:hover,
+.description a:focus-visible,
+.release_note a:hover,
+.release_note a:focus-visible,
+.footer a:hover,
+.footer a:focus-visible,
+.manifest_link:hover,
+.manifest_link:focus-visible {
+  text-decoration: underline;
 }
 
 .button {
@@ -207,13 +200,10 @@ h1 {
 }
 
 .button_primary {
+  width: 100%;
+  margin-top: auto;
   background: linear-gradient(135deg, var(--blue_strong), var(--blue));
   box-shadow: 0 18px 40px rgba(70, 156, 236, 0.28);
-}
-
-.button_secondary {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: var(--border);
 }
 
 .release_card {
@@ -277,27 +267,18 @@ h1 {
   font-weight: 700;
 }
 
-.release_status,
+.release_code {
+  max-width: 18rem;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 0.7rem;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
 .release_note {
   margin: 0;
   color: var(--muted);
   line-height: 1.6;
-}
-
-.release_status {
-  min-height: 3.2em;
-}
-
-.manifest_link {
-  align-self: flex-start;
-  color: #ffe1a6;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.manifest_link:hover,
-.manifest_link:focus-visible {
-  text-decoration: underline;
 }
 
 .footer {
@@ -313,6 +294,10 @@ h1 {
 @media (max-width: 860px) {
   .hero {
     grid-template-columns: 1fr;
+  }
+
+  .release_card {
+    order: -1;
   }
 
   h1 {
