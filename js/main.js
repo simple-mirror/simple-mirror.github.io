@@ -47,8 +47,7 @@ function normalize_language(value) {
 }
 
 function string_for(key) {
-  const language_strings = translation_map[current_language] || translation_map.en;
-  return language_strings[key] ?? translation_map.en[key] ?? "";
+  return translation_map[current_language]?.[key] ?? translation_map.en[key] ?? "";
 }
 
 function resolve_initial_language() {
@@ -154,8 +153,6 @@ async function load_release_information() {
   const installer_asset = release && Array.isArray(release.assets)
     ? release.assets.find((asset) => asset.name.endsWith(".exe"))
     : null;
-  const has_release_data = Boolean(manifest || release);
-
   release_data.loading = false;
   release_data.version =
     (manifest && manifest.version) ||
@@ -178,7 +175,7 @@ async function load_release_information() {
     (manifest && manifest.installer && manifest.installer.url) ||
     (installer_asset && installer_asset.browser_download_url) ||
     RELEASES_URL;
-  manifest_link.hidden = has_release_data;
+  manifest_link.hidden = Boolean(manifest || release);
 
   render_release_data();
 }

@@ -66,7 +66,6 @@ body::before {
   align-items: center;
   gap: 0.95rem;
   color: var(--text);
-  text-decoration: none;
 }
 
 .brand img {
@@ -173,7 +172,15 @@ h1 {
   margin-top: 0.35rem;
 }
 
+.video_note {
+  margin: 1.25rem 0 0;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
 .description a,
+.video_note a,
 .release_note a,
 .footer a,
 .manifest_link {
@@ -184,6 +191,8 @@ h1 {
 
 .description a:hover,
 .description a:focus-visible,
+.video_note a:hover,
+.video_note a:focus-visible,
 .release_note a:hover,
 .release_note a:focus-visible,
 .footer a:hover,
