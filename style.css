@@ -142,15 +142,6 @@ body::before {
   pointer-events: none;
 }
 
-h1 {
-  margin: 0 0 0.9rem;
-  max-width: 10.5ch;
-  font-family: "Avenir Next Condensed", "Trebuchet MS", sans-serif;
-  font-size: clamp(2.4rem, 4vw, 4.25rem);
-  line-height: 0.96;
-  letter-spacing: 0.01em;
-}
-
 .description {
   max-width: 66ch;
   margin: 0;
@@ -168,19 +159,18 @@ h1 {
   padding-left: 1.35rem;
 }
 
+.description ul + p {
+  margin-top: 1rem;
+}
+
 .description li + li {
   margin-top: 0.35rem;
 }
 
-.warning_note,
 .video_note {
-  margin: 1.25rem 0 0;
+  margin: 0.85rem 0 0;
   color: var(--muted);
   line-height: 1.65;
-}
-
-.warning_note {
-  color: #dbe8f5;
 }
 
 .warning_danger {
@@ -190,7 +180,6 @@ h1 {
 
 .video_note {
   font-size: 1.02rem;
-  margin-top: 0.85rem;
 }
 
 .description a,
@@ -330,14 +319,6 @@ h1 {
 @media (max-width: 860px) {
   .hero {
     grid-template-columns: 1fr;
-  }
-
-  .release_card {
-    order: -1;
-  }
-
-  h1 {
-    max-width: 13ch;
   }
 }
 
