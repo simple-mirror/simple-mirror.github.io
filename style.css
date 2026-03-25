@@ -154,6 +154,10 @@ body::before {
   margin: 0;
 }
 
+.description p + p {
+  margin-top: 0.85rem;
+}
+
 .description ul {
   margin: 1rem 0 0;
   padding-left: 1.35rem;
@@ -167,23 +171,12 @@ body::before {
   margin-top: 0.35rem;
 }
 
-.video_note {
-  margin: 0.85rem 0 0;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
 .warning_danger {
   color: #ff7b7b;
   font-weight: 800;
 }
 
-.video_note {
-  font-size: 1.02rem;
-}
-
 .description a,
-.video_note a,
 .release_note a,
 .footer a,
 .manifest_link {
@@ -194,8 +187,6 @@ body::before {
 
 .description a:hover,
 .description a:focus-visible,
-.video_note a:hover,
-.video_note a:focus-visible,
 .release_note a:hover,
 .release_note a:focus-visible,
 .footer a:hover,
